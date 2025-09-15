@@ -1,0 +1,90 @@
+# Git
+Git adalah sistem kontrol versi terdistribusi yang digunakan untuk melacak perubahan pada kode sumber selama pengembangan perangkat lunak. Dengan Git, beberapa pengembang dapat bekerja secara bersamaan pada proyek yang sama tanpa konflik.
+
+Git mulai dikembangkan oleh Linus Torvalds pada April 2005, sebagai pengganti BitKeeper yang sebelumnya digunakan sejak tahun 2002 tetapi dihentikan lisensinya.
+
+# Macam-Macam Perintah Git
+
+1. Konfigurasi (Config)
+   A. git config --global user.name "<Name>"
+      -> Menentukan nama user untuk commit (global).
+   B. git config --global user.email "<Email>"
+      -> Menentukan email user untuk commit (global).
+   C. git config --list
+      -> Melihat daftar konfigurasi Git.
+
+2. Membuat Repository (Create)
+   A. git init
+      -> Membuat repository Git baru di folder lokal.
+   B. git clone <url>
+      -> Mengkloning repository dari remote (misalnya GitHub/GitLab) ke lokal komputer.
+
+3. Membuat & Mengubah File (Make a Change)
+   A. git add <file>
+      -> Menambahkan file tertentu ke staging area.
+   B. git add .
+      -> Menambahkan semua perubahan file ke staging area.
+   C. git commit -m "<Message>"
+      -> Menyimpan perubahan dari staging area ke repository lokal dengan pesan commit.
+   D. git commit --amend -m "<New Message>"
+      -> Mengubah pesan commit terakhir atau menambahkan file baru ke commit terakhir.
+   E. git reset <file>
+      -> Membatalkan file yang sudah masuk staging area.
+   F. git reset --soft <commit>
+      -> Kembali ke commit tertentu tapi perubahan tetap ada di staging area.
+   G. git reset --hard
+      -> Mengembalikan semua file ke kondisi commit terakhir (perubahan hilang).
+
+4. Mengamati Perubahan (Observe)
+   A. git status
+      -> Menampilkan status repository.
+   B. git diff
+      -> Menampilkan perbedaan antara file yang diubah dengan commit sebelumnya.
+   C. git show <commit>
+      -> Menampilkan detail commit tertentu.
+   D. git log
+      -> Menampilkan riwayat commit.
+
+5. Sinkronisasi dengan Remote (Sync)
+   A. git remote -v
+      -> Melihat daftar remote repository.
+   B. git remote add origin <url>
+      -> Menambahkan remote baru.
+   C. git push
+      -> Mengirim commit dari lokal ke remote.
+   D. git push <remote> <branch>
+      -> Mengirim commit ke remote tertentu pada branch tertentu.
+   E. git pull
+      -> Mengambil update dari remote dan langsung merge.
+   F. git fetch
+      -> Mengambil update dari remote tanpa merge.
+
+6. Branching
+   A. git branch
+      -> Melihat daftar branch / membuat branch baru.
+   B. git checkout <branch>
+      -> Berpindah ke branch lain.
+   C. git merge <branch>
+      -> Menggabungkan branch tertentu ke branch aktif.
+   D. git tag <tag_name>
+      -> Memberikan tanda/tag pada commit (misalnya versi rilis).
+
+7. Stash (Simpan Sementara)
+   A. git stash
+      -> Menyimpan sementara perubahan yang belum di-commit.
+   B. git stash list
+      -> Melihat daftar stash.
+   C. git stash pop
+      -> Mengembalikan perubahan dari stash ke working directory.
+
+8. Menghapus File (Remove / Clean)
+   A. git rm <file>
+      -> Menghapus file dari repository dan working directory.
+   B. git rm --cached <file>
+      -> Menghapus file dari repository tapi tetap di working directory.
+   C. git clean -fd
+      -> Menghapus file/folder yang tidak dilacak (untracked).
+
+9. Revert / Membatalkan Perubahan
+   A. git revert <commit>
+      -> Membuat commit baru untuk membatalkan perubahan dari commit tertentu.
